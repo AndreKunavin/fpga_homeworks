@@ -1,0 +1,14 @@
+module decrypt (dig, seg_dig);
+	input [3:0] dig;
+	output [6:0] seg_dig;
+	
+	assign x1 = dig[3];
+	assign x2 = dig[2];
+	assign x3 = dig[1];
+	assign x4 = dig[0];
+	
+	reg a;
+	assign a = !(!x1 * !x2 * !x3 * x4 + !x1 * x2 * !x3 * !x4);
+	assign seg_dig[6]= a;
+	assign seg_dig[5:0] = 6'b00000;
+endmodule 

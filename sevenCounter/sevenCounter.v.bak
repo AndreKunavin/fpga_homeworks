@@ -1,0 +1,5 @@
+module sevenCounter (
+	input wire clc50;
+
+
+);
